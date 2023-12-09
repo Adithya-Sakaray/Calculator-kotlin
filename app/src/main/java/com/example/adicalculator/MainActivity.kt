@@ -44,6 +44,11 @@ import androidx.compose.ui.unit.sp
 import com.example.adicalculator.ui.theme.AdiCalculatorTheme
 import kotlin.math.roundToInt
 import kotlin.math.roundToLong
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.runtime.remember
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalContext
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,6 +77,9 @@ class MainActivity : ComponentActivity() {
                 var invDiv by remember {
                     mutableStateOf(false)
                 }
+
+                val interactionSource = remember { MutableInteractionSource() }
+
 
 
                 fun handleNumberClick(number: String) {
@@ -193,7 +201,7 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "AC",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.LightGray, shape = CircleShape),
                             onClick = { handleSpecialClick("AC") }
                         )
@@ -201,7 +209,7 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "+/-",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.LightGray, shape = CircleShape),
                             onClick = { handleSpecialClick("+/-") }
                         )
@@ -209,7 +217,7 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "Del",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.LightGray, shape = CircleShape),
                             onClick = { handleSpecialClick("Del") }
                         )
@@ -217,7 +225,7 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "÷",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = changeColor(invDiv), shape = CircleShape),
                             onClick = { handleOperationClick("÷") }
                         )
@@ -231,28 +239,28 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "7",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("7") }
                         )
                         CalculatorButton(
                             symbol = "8",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("8") }
                         )
                         CalculatorButton(
                             symbol = "9",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("9") }
                         )
                         CalculatorButton(
                             symbol = "×",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = changeColor(invMul), shape = CircleShape),
                             onClick = { handleOperationClick("×") }
                         )
@@ -267,28 +275,28 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "4",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("4") }
                         )
                         CalculatorButton(
                             symbol = "5",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("5") }
                         )
                         CalculatorButton(
                             symbol = "6",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("6") }
                         )
                         CalculatorButton(
                             symbol = "-",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = changeColor(invSub), shape = CircleShape),
                             onClick = { handleOperationClick("-") }
                         )
@@ -301,28 +309,28 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "1",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("1") }
                         )
                         CalculatorButton(
                             symbol = "2",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("2") }
                         )
                         CalculatorButton(
                             symbol = "3",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("3") }
                         )
                         CalculatorButton(
                             symbol = "+",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = changeColor(invAdd), shape = CircleShape),
                             onClick = { handleOperationClick("+") }
                         )
@@ -335,21 +343,21 @@ class MainActivity : ComponentActivity() {
                         CalculatorButton(
                             symbol = "0",
                             modifier = Modifier
-                                .size(170.dp, 80.dp)
+                                .size(170.dp, 85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick("0") }
                         )
                         CalculatorButton(
                             symbol = ".",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color.DarkGray, shape = CircleShape),
                             onClick = { handleNumberClick(".") }
                         )
                         CalculatorButton(
                             symbol = "=",
                             modifier = Modifier
-                                .size(80.dp)
+                                .size(85.dp)
                                 .background(color = Color(0xFFFFA500), shape = CircleShape),
                             onClick = { handleEqualsClick() }
                         )
